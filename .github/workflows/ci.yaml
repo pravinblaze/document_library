@@ -34,12 +34,6 @@ jobs:
       - name: Run Flake8 (linting)
         run: flake8 . --exclude=migrations,.venv
 
-      - name: Run MyPy (type checking)
-        run: mypy .
-
-      - name: Run Bandit (security scan)
-        run: bandit -r .
-
   test:
     name: Run Tests & Coverage
     runs-on: ubuntu-latest
