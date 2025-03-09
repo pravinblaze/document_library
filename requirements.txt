@@ -1,0 +1,9 @@
+flask
+sqlalchemy
+flask-migrate
+boto3
+elasticsearch
+pytest
+coverage
+black
+
