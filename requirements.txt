@@ -1,9 +1,11 @@
 flask
 sqlalchemy
 flask-migrate
+pymysql
+python-dotenv
 boto3
 elasticsearch
 pytest
+pytest-cov
 coverage
 black
-
