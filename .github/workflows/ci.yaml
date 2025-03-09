@@ -54,7 +54,7 @@ jobs:
           pip install pytest pytest-cov coverage
 
       - name: Run Tests
-        run: pytest --cov=.
+        run: PYTHONPATH=. pytest --cov=app --cov-report=term-missing --cov-report=html
 
       - name: Upload Coverage Report
         uses: codecov/codecov-action@v3
