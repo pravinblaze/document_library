@@ -1,7 +1,8 @@
 def test_upload_document(client):
+    jd = {"title": "Sample", "description": "Test file", "s3_key": "s3/test"}
     response = client.post(
         "/api/documents",
-        json={"title": "Sample", "description": "Test file", "s3_key": "s3/test"},
+        json=jd,
     )
     assert response.status_code == 201
 

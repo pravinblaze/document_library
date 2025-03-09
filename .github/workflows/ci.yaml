@@ -29,10 +29,10 @@ jobs:
           pip install black flake8 mypy bandit
 
       - name: Run Black (format check)
-        run: black --check .
+        run: black --check . --exclude="migrations/|.venv/"
 
       - name: Run Flake8 (linting)
-        run: flake8 .
+        run: flake8 . --exclude=migrations,.venv
 
       - name: Run MyPy (type checking)
         run: mypy .
