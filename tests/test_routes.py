@@ -22,9 +22,14 @@ def test_upload_document_missing_title(client):
     assert "error" in response.json
     assert response.json["error"] == "Title is required"
 
+
 def test_get_document(client):
     # First create a document
-    jd = {"title": "Get Doc Test", "description": "Test file for get", "s3_key": "s3/get-test"}
+    jd = {
+        "title": "Get Doc Test",
+        "description": "Test file for get",
+        "s3_key": "s3/get-test",
+    }
     create_response = client.post("/api/documents", json=jd)
     assert create_response.status_code == 201
     doc_id = create_response.json["id"]
@@ -34,14 +39,20 @@ def test_get_document(client):
     assert get_response.status_code == 200
     assert get_response.json["title"] == "Get Doc Test"
 
+
 def test_get_nonexistent_document(client):
     response = client.get("/api/documents/9999")
     assert response.status_code == 404
     assert "error" in response.json
 
+
 def test_delete_document(client):
     # First create a document
-    jd = {"title": "Delete Test", "description": "Test file for deletion", "s3_key": "s3/delete-test"}
+    jd = {
+        "title": "Delete Test",
+        "description": "Test file for deletion",
+        "s3_key": "s3/delete-test",
+    }
     create_response = client.post("/api/documents", json=jd)
     assert create_response.status_code == 201
     doc_id = create_response.json["id"]
@@ -54,6 +65,7 @@ def test_delete_document(client):
     # Verify it's gone
     get_response = client.get(f"/api/documents/{doc_id}")
     assert get_response.status_code == 404
+
 
 def test_delete_nonexistent_document(client):
     response = client.delete("/api/documents/9999")
