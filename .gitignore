@@ -3,3 +3,5 @@ __pycache__
 .env
 htmlcov
 .coverage
+.mypy_cache
+.pytest_cache
