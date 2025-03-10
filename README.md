@@ -16,3 +16,4 @@ This is a demo project to showcase building a restful python flask application.
     - Check code format using `black`
     - Lint the code using `flake8`
     - Run rests and create code coverage report using `pytest`, and `pytest-cov`
+10. You can see the results of the CI pipeline runs here: [https://github.com/pravinblaze/document_library/actions](https://github.com/pravinblaze/document_library/actions).
