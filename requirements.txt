@@ -3,6 +3,7 @@ sqlalchemy
 flask-migrate
 pymysql
 python-dotenv
+cryptography
 boto3
 elasticsearch
 pytest
